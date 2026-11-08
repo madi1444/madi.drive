@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Алатау Гранд — қонақүй брондау</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--ink:#0f2238;--mut:#617285;--line:#e0e6ed;--navy:#0b1d33;--pri:#14365e;--gold:#c9a24b;--gold2:#e8c777;--ok:#17855a;--bad:#c53b3b;--wait:#b0801c;--sh:0 10px 30px rgba(11,29,51,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08121f;--card:#102338;--ink:#e9eff6;--mut:#9db0c3;--line:#223b55;--pri:#8cc0ff;--sh:0 10px 30px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#08121f;--card:#102338;--ink:#e9eff6;--mut:#9db0c3;--line:#223b55;--pri:#8cc0ff}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 15px/1.6 Montserrat,system-ui,sans-serif}
+h1,h2,h3{font-family:"Noto Serif",Georgia,serif;font-weight:700;margin:0 0 .45em;line-height:1.2;letter-spacing:-.01em}
+h2{font-size:clamp(24px,4vw,32px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:20}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navy);color:#fff;border-bottom:2px solid var(--gold)}
+.hd{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 16px;flex-wrap:wrap}
+.logo{font:700 21px "Noto Serif",Georgia,serif;margin-right:auto;cursor:pointer;display:flex;align-items:center;gap:8px}.logo span{color:var(--gold2)}
+nav{display:flex;gap:2px;overflow-x:auto;max-width:100%}
+nav button,.who button{background:none;border:0;color:#cdd9e6;padding:8px 12px;border-radius:8px;font:600 13.5px Montserrat,sans-serif;cursor:pointer;white-space:nowrap}
+nav button.on,nav button:hover,.who button:hover{background:rgba(255,255,255,.12);color:#fff}
+nav button.on{box-shadow:inset 0 -2px var(--gold)}
+.who{display:flex;gap:6px;align-items:center;font-size:13px;color:#cdd9e6}.who b{color:#fff}
+.role{font-size:11px;background:var(--gold);color:#241a00;padding:2px 8px;border-radius:99px;font-weight:700}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+main{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
+.hero{border-radius:26px;padding:64px 32px 36px;color:#fff;position:relative;overflow:hidden;background:radial-gradient(circle at 85% 10%,rgba(232,199,119,.35),transparent 40%),linear-gradient(135deg,#0b1d33,#14365e 60%,#1d5a7a)}
+.hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(60deg,rgba(255,255,255,.04) 0 2px,transparent 2px 26px);pointer-events:none}
+.hero>*{position:relative;z-index:1}
+.hero h1{font-size:clamp(34px,6vw,60px);max-width:14ch;margin-bottom:14px}
+.hero p{max-width:50ch;color:#cfdcea;font-size:16px}
+.search{margin-top:30px;background:rgba(255,255,255,.96);color:#0f2238;padding:16px;border-radius:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:end;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.search label{color:#617285}.search input,.search select{background:#f4f6f9;color:#0f2238;border-color:#e0e6ed}
+label{display:block;font-size:12.5px;font-weight:600;color:var(--mut);margin-bottom:5px}
+input,select,textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);font:500 14.5px Montserrat,sans-serif}
+textarea{min-height:90px;resize:vertical}
+.btn{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1e00;border:0;padding:12px 22px;border-radius:11px;font:700 14px Montserrat,sans-serif;cursor:pointer;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn.pri{background:var(--pri);color:#fff}.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink)}.btn.bad{background:var(--bad);color:#fff}.btn.okb{background:var(--ok);color:#fff}.btn.sm{padding:6px 11px;font-size:12px;border-radius:8px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:24px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--sh);border-top:3px solid var(--gold)}.stat b{font:700 26px "Noto Serif",serif;display:block;margin-bottom:2px}.stat span{color:var(--mut);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.room{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--sh);transition:transform .2s}
+.room:hover{transform:translateY(-3px)}
+.pic{height:150px;display:grid;place-items:center;font-size:60px;position:relative;background-size:cover}
+.pic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(60deg,rgba(255,255,255,.07) 0 2px,transparent 2px 22px)}
+.pic>*{position:relative;z-index:1}
+.pic .badge{position:absolute;top:12px;right:12px}
+.rb{padding:18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.price{font:700 23px "Noto Serif",serif;color:var(--pri)}.price small{font:500 12.5px Montserrat,sans-serif;color:var(--mut)}
+.tag{display:inline-block;font-size:11.5px;padding:3px 10px;border-radius:99px;background:var(--bg);border:1px solid var(--line);margin:0 4px 4px 0}
+.badge{font-size:11.5px;font-weight:700;padding:3px 11px;border-radius:99px;color:#fff;display:inline-block}
+.b-ok{background:var(--ok)}.b-bad{background:var(--bad)}.b-wait{background:var(--wait)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:20px;box-shadow:var(--sh)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:14px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin-bottom:16px}.bar>div{min-width:150px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13.5px}th{font-size:12px;color:var(--mut);font-weight:600}th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}@media(max-width:820px){.two{grid-template-columns:1fr}}
+.sum{background:linear-gradient(160deg,var(--navy),#14365e);color:#fff;border-radius:20px;padding:22px;position:sticky;top:90px}.sum h3{color:var(--gold2)}.sum .ln{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:14px}.sum .tot{font:700 26px "Noto Serif",serif;color:var(--gold2);margin-top:14px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:26px}.feat .panel{margin:0}.ico{font-size:34px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.auth{max-width:440px;margin:20px auto}
+details.sec{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:var(--card);overflow:hidden}
+details.sec>summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;align-items:center;gap:10px}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::after{content:"＋";margin-left:auto;color:var(--gold);font-size:20px}
+details.sec[open]>summary::after{content:"−"}
+details.sec[open]>summary{border-bottom:1px solid var(--line);background:var(--bg)}
+.sec .in{padding:16px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}.kv span{display:block;font-size:12px;color:var(--mut)}.kv b{font-size:15px}
+.steps{display:flex;margin:4px 0 20px;overflow-x:auto}.stp{flex:1;min-width:88px;text-align:center;font-size:12px;color:var(--mut);position:relative}.stp i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--line);margin:0 auto 6px;font-style:normal;font-weight:700;position:relative;z-index:1}.stp.d i{background:var(--ok);color:#fff}.stp.d{color:var(--ink);font-weight:600}.stp::before{content:"";position:absolute;top:14px;left:-50%;width:100%;height:3px;background:var(--line)}.stp:first-child::before{display:none}.stp.d::before{background:var(--ok)}
+.tl{border-left:3px solid var(--gold);margin-left:8px;padding-left:18px}.tl>div{margin-bottom:14px;position:relative}.tl>div::before{content:"";position:absolute;left:-26px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.svc{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer;font-size:14px;color:var(--ink);font-weight:600}.svc input{width:auto}.svc span{margin-left:auto;font-weight:700;color:var(--pri)}
+.hl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;background:linear-gradient(135deg,var(--navy),#14365e);color:#fff;border-radius:18px;padding:20px;margin-bottom:18px}.hl h3{margin:0 0 4px;color:var(--gold2);font-size:22px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--navy);color:#fff;padding:13px 22px;border-radius:13px;z-index:30;box-shadow:0 12px 36px rgba(0,0,0,.35);max-width:92vw;border-left:4px solid var(--gold)}
+.muted{color:var(--mut)}.err{color:var(--bad);font-size:13px;min-height:20px;margin-bottom:6px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:24px}
+@media(prefers-reduced-motion:no-preference){.view{animation:in .3s ease}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><div class="hd"><div class="logo" data-go="home">🏔️ Алатау <span>Гранд</span></div><nav id="nav"></nav><div class="who" id="who"></div></div></header>
+<main id="app"></main>
+<footer>© 2026 Алатау Гранд қонақүйі · Алматы, Достық даңғылы 100 · +7 727 000 00 00</footer>
+<div id="toast" class="toast" hidden></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const mem={};
+const DB={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return mem[k]!==undefined?mem[k]:d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){mem[k]=v}}};
+const h=s=>{let x=5381;for(let i=0;i<s.length;i++)x=((x<<5)+x+s.charCodeAt(i))|0;return String(x)};
+const day=n=>{const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+const ROOMS0=[
+{id:1,name:"Стандарт бір кісілік",type:"Стандарт",price:18000,cap:1,beds:"1 бөлек төсек",ic:"🛏️",c:"#2b6cb0,#1d8a9a",f:["Wi‑Fi","Теледидар","Душ"],on:true},
+{id:2,name:"Стандарт екі кісілік",type:"Стандарт",price:24000,cap:2,beds:"2 бөлек төсек",ic:"🛌",c:"#14365e,#2b6cb0",f:["Wi‑Fi","Кондиционер","Душ"],on:true},
+{id:3,name:"Комфорт",type:"Комфорт",price:32000,cap:2,beds:"1 үлкен төсек",ic:"🌆",c:"#1d8a9a,#14365e",f:["Wi‑Fi","Мини-бар","Балкон","Таңғы ас"],on:true},
+{id:4,name:"Комфорт отбасылық",type:"Комфорт",price:42000,cap:4,beds:"2 үлкен төсек",ic:"👨‍👩‍👧",c:"#b0801c,#14365e",f:["Wi‑Fi","Мини-бар","Балалар бұрышы","Таңғы ас"],on:true},
+{id:5,name:"Делюкс таулы көрініс",type:"Делюкс",price:55000,cap:3,beds:"1 кинг-сайз + диван",ic:"🏔️",c:"#14365e,#6b8fb5",f:["Wi‑Fi","Таулы көрініс","Джакузи","Таңғы ас"],on:true},
+{id:6,name:"Жанұялық сьют",type:"Сьют",price:78000,cap:5,beds:"2 жатын бөлме",ic:"🏰",c:"#6b46a8,#14365e",f:["Wi‑Fi","Қонақ бөлме","Асүй","Трансфер"],on:true},
+{id:7,name:"Президенттік сьют",type:"Сьют",price:150000,cap:4,beds:"2 кинг-сайз",ic:"👑",c:"#c9a24b,#0b1d33",f:["Wi‑Fi","Дворецкий","Спа","Трансфер"],on:true},
+{id:8,name:"Бизнес-нөмір",type:"Комфорт",price:36000,cap:2,beds:"1 үлкен төсек",ic:"💼",c:"#2f4858,#1d8a9a",f:["Wi‑Fi","Жұмыс үстелі","Принтер","Таңғы ас"],on:true}];
+let rooms=DB.get("h2rooms",ROOMS0),users=DB.get("h2users",null),books=DB.get("h2books",null),reqs=DB.get("h2reqs",[]);
+if(!users){users=[{id:"U1",name:"Әкімші",email:"admin@alatau.kz",phone:"+7 727 000 00 00",pw:h("admin123"),role:"admin"},{id:"U2",name:"Айжан Серікова",email:"user@mail.kz",phone:"+7 701 111 22 33",pw:h("user123"),role:"user"}];DB.set("h2users",users)}
+if(!books){books=[{id:"B1001",uid:"U2",room:3,name:"Айжан Серікова",phone:"+7 701 111 22 33",email:"user@mail.kz",in:day(1),out:day(4),g:2,total:96000,st:"Расталды",at:day(-2)},{id:"B1002",uid:"U2",room:5,name:"Айжан Серікова",phone:"+7 701 111 22 33",email:"user@mail.kz",in:day(10),out:day(12),g:2,total:110000,st:"Күтуде",at:day(-1)}];DB.set("h2books",books)}
+const S={v:"home",in:day(0),out:day(1),g:1,type:"",sort:"",room:null,me:DB.get("h2me",null),mode:"in",tab:"b",fs:"",q:"",next:null,bk:null,code:"",ph:"",op:{i:true}};
+const cur=()=>users.find(u=>u.id===S.me)||null;
+const isAdm=()=>{const u=cur();return !!u&&u.role==="admin"};
+const fmt=n=>Number(n).toLocaleString("ru-RU")+" ₸";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const nights=(a,b)=>Math.round((new Date(b)-new Date(a))/864e5);
+const rm=id=>rooms.find(r=>r.id==id);
+const busy=(r,a,b)=>books.some(x=>x.room==r&&x.st!=="Бас тартылды"&&a<x.out&&b>x.in);
+const save=()=>{DB.set("h2rooms",rooms);DB.set("h2users",users);DB.set("h2books",books);DB.set("h2reqs",reqs)};
+const toast=t=>{const e=$("#toast");e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,3400)};
+const go=v=>{if((v==="my"||v==="book")&&!cur()){S.next=v;S.mode="in";v="auth";toast("Алдымен жүйеге кіріңіз")}if(v==="admin"&&!isAdm()){toast(cur()?"Бұл бөлім тек әкімшіге ашық":"Әкімші ретінде кіріңіз");S.next="admin";S.mode="in";v="auth"}S.v=v;render();scrollTo(0,0)};
+const okPhone=p=>p.replace(/\D/g,"").length>=10;
+function addBooking(o){const r=rm(o.room);
+if(!o.in||!o.out||nights(o.in,o.out)<1)return "Кету күні келу күнінен кейін болуы керек.";
+if(o.in<day(0))return "Өткен күнге брондауға болмайды.";
+if(o.g<1||o.g>r.cap)return "Бұл нөмірге ең көбі "+r.cap+" қонақ сыяды.";
+if(o.name.trim().length<3)return "Қонақтың аты-жөнін толық жазыңыз.";
+if(!okPhone(o.phone))return "Телефон нөмірін дұрыс жазыңыз (кемінде 10 сан).";
+if(busy(r.id,o.in,o.out))return "Бұл күндері нөмір бос емес. Басқа күн немесе нөмір таңдаңыз.";
+const id="B"+(1000+Math.max(0,...books.map(b=>+b.id.slice(1)-1000))+1);
+books.push({id,uid:o.uid,room:r.id,name:o.name.trim(),phone:o.phone,email:o.email||"",in:o.in,out:o.out,g:o.g,total:nights(o.in,o.out)*r.price,st:o.st||"Күтуде",at:day(0)});save();return {id}}
+const dateBar=()=>`<div class="search"><div><label>Келу күні</label><input type="date" id="d1" min="${day(0)}" value="${S.in}"></div><div><label>Кету күні</label><input type="date" id="d2" min="${day(1)}" value="${S.out}"></div><div><label>Қонақ саны</label><select id="gg">${[1,2,3,4,5].map(n=>`<option ${S.g==n?"selected":""}>${n}</option>`).join("")}</select></div><button class="btn" id="find">Бос нөмірлерді іздеу</button></div>`;
+const stb=s=>`<span class="badge ${s==="Расталды"?"b-ok":s==="Күтуде"?"b-wait":"b-bad"}">${s}</span>`;
+function card(r,withBtn=true){const free=!busy(r.id,S.in,S.out),n=nights(S.in,S.out)>0?nights(S.in,S.out):0;
+return `<article class="room"><div class="pic" style="background:linear-gradient(135deg,${r.c})"><span>${r.ic}</span><span class="badge ${free?"b-ok":"b-bad"}">${free?"Бос":"Бос емес"}</span></div><div class="rb"><h3 style="margin:0;font-size:18px">${esc(r.name)}</h3><div class="muted" style="font-size:13px">👥 ${r.cap} адамға дейін · ${esc(r.beds)}</div><div>${r.f.map(f=>`<span class="tag">${esc(f)}</span>`).join("")}</div><div class="price">${fmt(r.price)} <small>/ түн</small></div>${n?`<div class="muted" style="font-size:12.5px">${n} түн: ${fmt(r.price*n)}</div>`:""}${withBtn?`<button class="btn" style="margin-top:auto" data-b="${r.id}" ${free?"":"disabled"}>Брондау</button>`:""}</div></article>`}
+function vHome(){const act=books.filter(b=>b.st!=="Бас тартылды").length;
+return `<section class="hero"><h1>Алатау етегіндегі жайлы демалыс</h1><p>Күндерді таңдаңыз, бос нөмірлерді бірден көріңіз және бірнеше минутта брондаңыз. Алдын ала төлем керек емес.</p>${dateBar()}</section>
+<div class="stats"><div class="stat"><b>${rooms.filter(r=>r.on).length}</b><span>нөмір түрі</span></div><div class="stat"><b>${act}</b><span>белсенді бронь</span></div><div class="stat"><b>24/7</b><span>қабылдау қызметі</span></div><div class="stat"><b>14:00 / 12:00</b><span>келу / кету уақыты</span></div></div>
+<h2>Ең танымал нөмірлер</h2><div class="grid" style="margin-bottom:30px">${rooms.filter(r=>r.on).slice(2,5).map(r=>card(r)).join("")}</div>
+<h2>Қонақүй қызметтері</h2><div class="feat">${[["🍳","Таңғы ас","Жергілікті және еуропалық мәзір."],["📶","Жылдам Wi‑Fi","Барлық нөмірлерде тегін."],["🚗","Трансфер","Әуежайдан тапсырыс бойынша."],["🧖","Спа орталығы","Бассейн, сауна, массаж."]].map(f=>`<div class="panel"><div class="ico">${f[0]}</div><h3>${f[1]}</h3><p class="muted" style="margin:0">${f[2]}</p></div>`).join("")}</div>`}
+function vRooms(){let list=rooms.filter(r=>r.on&&(!S.type||r.type===S.type)&&r.cap>=S.g);
+if(S.sort==="a")list.sort((a,b)=>a.price-b.price);if(S.sort==="d")list.sort((a,b)=>b.price-a.price);
+const types=[""].concat([...new Set(rooms.map(r=>r.type))]);
+return `<h2>Нөмірлер</h2>${dateBar()}<div class="bar" style="margin:18px 0"><div><label>Санат</label><select id="ft">${types.map(t=>`<option value="${t}" ${S.type===t?"selected":""}>${t||"Барлығы"}</option>`).join("")}</select></div><div><label>Сұрыптау</label><select id="so"><option value="">Әдепкі</option><option value="a" ${S.sort==="a"?"selected":""}>Арзаннан қымбатқа</option><option value="d" ${S.sort==="d"?"selected":""}>Қымбаттан арзанға</option></select></div></div>${list.length?`<div class="grid">${list.map(r=>card(r)).join("")}</div>`:'<div class="panel">Сұранысқа сәйкес нөмір жоқ. Қонақ санын немесе санатты өзгертіңіз.</div>'}`}
+function vBook(){const r=rm(S.room),u=cur();if(!r)return '<div class="panel">Алдымен нөмірді таңдаңыз. <button class="btn pri sm" data-go="rooms">Нөмірлерге өту</button></div>';
+return `<h2>Брондау</h2><div class="two"><div class="panel"><h3>${esc(r.name)}</h3><div class="row"><div><label>Келу күні</label><input type="date" id="b1" min="${day(0)}" value="${S.in}"></div><div><label>Кету күні</label><input type="date" id="b2" min="${day(1)}" value="${S.out}"></div><div><label>Қонақ саны (макс. ${r.cap})</label><input type="number" id="bg" min="1" max="${r.cap}" value="${Math.min(S.g,r.cap)}"></div></div><div class="row"><div><label>Қонақтың аты-жөні</label><input id="bn" value="${esc(u.name)}"></div><div><label>Телефон</label><input id="bp" type="tel" value="${esc(u.phone)}"></div></div><div class="err" id="er"></div><button class="btn" id="ok">Броньды растау</button> <button class="btn ghost" data-go="rooms">Артқа</button></div>
+<aside class="sum"><h3>Брондау мәліметі</h3><div class="ln"><span>Нөмір</span><b>${esc(r.name)}</b></div><div class="ln"><span>Бағасы</span><b>${fmt(r.price)} / түн</b></div><div class="ln"><span>Түн саны</span><b id="sn">0</b></div><div class="tot" id="st">0 ₸</div><p style="font-size:12.5px;color:#b9c8d8;margin:10px 0 0">Бронь «Күтуде» мәртебесімен түседі, әкімші растайды.</p></aside></div>`}
+function bookTable(list,adm){if(!list.length)return '<p class="muted">Брондар табылмады.</p>';
+return `<div class="tw"><table><tr><th>Код</th><th>Нөмір</th>${adm?"<th>Қонақ</th><th>Телефон</th>":""}<th>Күндері</th><th>Сома</th><th>Мәртебе</th><th></th></tr>${list.map(b=>`<tr><td><button class="btn sm ghost" data-view="${b.id}">🔍 ${b.id}</button></td><td>${esc(rm(b.room)?rm(b.room).name:"—")}</td>${adm?`<td>${esc(b.name)}</td><td>${esc(b.phone)}</td>`:""}<td>${b.in} → ${b.out}</td><td>${fmt(b.total)}</td><td>${stb(b.st)}</td><td>${adm?(b.st==="Күтуде"?`<button class="btn sm okb" data-ok="${b.id}">Растау</button> `:"")+(b.st!=="Бас тартылды"?`<button class="btn sm ghost" data-cx="${b.id}">Бас тарту</button> `:"")+`<button class="btn sm bad" data-del="${b.id}">Жою</button>`:(b.st!=="Бас тартылды"?`<button class="btn sm bad" data-cx="${b.id}">Бас тарту</button>`:"")}</td></tr>`).join("")}</table></div>`}
+function vMy(){const u=cur(),l=books.filter(b=>b.uid===u.id).reverse();
+return `<h2>Менің брондарым</h2><div class="stats"><div class="stat"><b>${l.length}</b><span>барлық бронь</span></div><div class="stat"><b>${l.filter(b=>b.st==="Расталды").length}</b><span>расталған</span></div><div class="stat"><b>${l.filter(b=>b.st==="Күтуде").length}</b><span>растауды күтуде</span></div></div><div class="panel">${l.length?bookTable(l,false):'<p class="muted">Брондарыңыз әлі жоқ.</p><button class="btn" data-go="rooms">Нөмір таңдау</button>'}</div>`}
+function vAuth(){const reg=S.mode==="up";
+return `<div class="auth panel"><h2>${reg?"Тіркелу":"Жүйеге кіру"}</h2><p class="muted">${reg?"Брондау үшін тіркеліңіз.":"Бұрынғы брондарыңызды көру үшін кіріңіз."}</p>${reg?'<div style="margin-bottom:12px"><label>Аты-жөні</label><input id="rn" autocomplete="name"></div><div style="margin-bottom:12px"><label>Телефон</label><input id="rp" type="tel"></div>':""}<div style="margin-bottom:12px"><label>Email</label><input id="ae" type="email" autocomplete="email"></div><div style="margin-bottom:12px"><label>Құпиясөз ${reg?"(кемінде 6 таңба)":""}</label><input id="aw" type="password" autocomplete="${reg?"new-password":"current-password"}"></div><div class="err" id="er"></div><button class="btn" id="go1" style="width:100%">${reg?"Тіркелу":"Кіру"}</button><p style="text-align:center;margin:14px 0 0"><button class="btn ghost sm" id="sw">${reg?"Тіркелгім бар — кіру":"Жаңа тіркелгі жасау"}</button></p>${reg?"":'<p class="muted" style="font-size:12.5px;margin:14px 0 0">Сынақ: әкімші — admin@alatau.kz / admin123; қонақ — user@mail.kz / user123</p>'}</div>`}
+const dg=s=>String(s).replace(/\D/g,"");
+const SV=[["bf","🍳","Таңғы ас",b=>4000*b.g*nights(b.in,b.out)],["tr","🚗","Әуежай трансфері",b=>8000],["lc","🕓","Кеш кету (18:00-ге дейін)",b=>10000],["sp","🧖","Спа пакеті",b=>15000*b.g]];
+const recalc=b=>{if(b.t0===undefined)b.t0=b.total;b.total=b.t0+(b.sv||[]).reduce((s,k)=>s+SV.find(x=>x[0]===k)[3](b),0)};
+function vFind(){const b=books.find(x=>x.id===S.bk);
+return `<h2>Брон іздеу</h2><div class="panel"><p class="muted">Бронь кодын (мысалы, B1001) және брондау кезіндегі телефон нөмірін енгізіңіз. Тапқан соң бөлімдер ашылады: мәлімет, нөмір, төлем, қызметтер, тарих.</p><div class="bar"><div><label>Бронь коды</label><input id="fc" value="${esc(S.code)}" placeholder="B1001"></div><div><label>Телефон</label><input id="fp" type="tel" value="${esc(S.ph)}" placeholder="${cur()?"өз броніңізге міндетті емес":"+7 7__ ___ __ __"}"></div><button class="btn" id="fgo">Іздеу</button></div><div class="err" id="er"></div></div>${b?detail(b):""}`}
+function detail(b){recalc(b);
+const r=rm(b.room)||{name:"—",f:[],beds:"",ic:"🛏️",c:"#14365e,#1d8a9a"},adm=isAdm(),can=adm||(!!cur()&&b.uid===S.me),act=b.st!=="Бас тартылды",conf=b.st==="Расталды",t=day(0),d=nights(t,b.in),n=nights(b.in,b.out),sv=b.sv||[];
+const when=!act?"Бронь бас тартылған":d>0?"Келуге "+d+" күн қалды":t<b.out?"Қазір қонақүйде":"Сапар аяқталды";
+const stp=[["Жасалды",act],["Расталды",conf],["Келу",conf&&t>=b.in],["Кету",conf&&t>=b.out]];
+const sec=(k,ic,ti,body)=>`<details class="sec" data-sec="${k}" ${S.op[k]?"open":""}><summary><span>${ic}</span>${ti}</summary><div class="in">${body}</div></details>`;
+const kv=a=>'<div class="kv">'+a.map(x=>`<div><span>${x[0]}</span><b>${x[1]}</b></div>`).join("")+'</div>';
+const pay=`<div class="tw"><table><tr><td>Нөмір құны (${n} түн)</td><td><b>${fmt(b.t0)}</b></td></tr>${sv.map(k=>{const s=SV.find(x=>x[0]===k);return `<tr><td>${s[1]} ${s[2]}</td><td><b>${fmt(s[3](b))}</b></td></tr>`}).join("")}<tr><td><b>Барлығы</b></td><td><b style="font-size:18px;color:var(--pri)">${fmt(b.total)}</b></td></tr></table></div><p class="muted" style="font-size:12.5px;margin:10px 0 0">Төлем қонақүйге келген кезде жүргізіледі.</p>`;
+const svc=can&&act?SV.map(s=>`<label class="svc"><input type="checkbox" data-sv="${s[0]}" ${sv.includes(s[0])?"checked":""}>${s[1]} ${s[2]}<span>+${fmt(s[3](b))}</span></label>`).join(""):'<p class="muted">Қызметтерді өзгерту мүмкін емес.</p>';
+const tl=[[b.at,"Бронь жасалды"]];if(sv.length)tl.push(["","Қызмет таңдалды: "+sv.map(k=>SV.find(x=>x[0]===k)[2]).join(", ")]);if(conf)tl.push(["","Әкімші броньды растады"]);if(!act)tl.push(["","Бронь бас тартылды"]);if(conf&&t>=b.in)tl.push([b.in,"Қонақ келді"]);if(conf&&t>=b.out)tl.push([b.out,"Қонақ кетті"]);
+const acts=can&&act?`<div class="row"><div><label>Жаңа келу күні</label><input type="date" id="ch1" min="${t}" value="${b.in}"></div><div><label>Жаңа кету күні</label><input type="date" id="ch2" min="${t}" value="${b.out}"></div></div><button class="btn" data-chg>Күндерді өзгерту</button> `+(adm&&b.st==="Күтуде"?`<button class="btn okb" data-ok="${b.id}">Растау</button> `:"")+`<button class="btn bad" data-cx="${b.id}">Бас тарту</button>`:'<p class="muted">Қолжетімді әрекеттер жоқ.</p>';
+return `<div id="det"><div class="hl"><div><h3>Бронь ${b.id}</h3><span style="color:#cfdcea">${esc(r.name)} · ${b.in} → ${b.out}</span></div><div style="text-align:right">${stb(b.st)}<div style="margin-top:6px;font-weight:600">${when}</div></div></div><div class="steps">${stp.map((s,i)=>`<div class="stp ${s[1]?"d":""}"><i>${s[1]?"✓":i+1}</i>${s[0]}</div>`).join("")}</div>`+
+sec("i","📋","Жалпы мәлімет",kv([["Бронь коды",b.id],["Келу","14:00 · "+b.in],["Кету","12:00 · "+b.out],["Түн саны",n],["Қонақ саны",b.g],["Жасалған күні",b.at]]))+
+sec("r","🛏️","Нөмір туралы",`<div class="pic" style="background:linear-gradient(135deg,${r.c});border-radius:14px;margin-bottom:14px"><span>${r.ic}</span></div>`+kv([["Атауы",esc(r.name)],["Төсек",esc(r.beds)]])+`<div style="margin-top:12px">${r.f.map(f=>`<span class="tag">${esc(f)}</span>`).join("")}</div>`)+
+sec("g","👤","Қонақ мәліметі",kv([["Аты-жөні",esc(b.name)],["Телефон",esc(b.phone)],["Email",esc(b.email||"—")]]))+
+sec("p","💳","Төлем",pay)+sec("s","⭐","Қосымша қызметтер",svc)+
+sec("h","🕒","Мәртебе тарихы",`<div class="tl">${tl.map(x=>`<div><b>${x[1]}</b>${x[0]?`<br><span class="muted" style="font-size:12.5px">${x[0]}</span>`:""}</div>`).join("")}</div>`)+
+sec("a","⚙️","Әрекеттер",acts)+'</div>'}
+function vContact(){const u=cur()||{name:"",phone:""};
+return `<h2>Өтінім қалдыру</h2><div class="panel"><p class="muted">Топтық тапсырыс, той немесе трансфер туралы жазыңыз — 1 сағат ішінде жауап береміз.</p><div class="row"><div><label>Аты-жөні</label><input id="cn" value="${esc(u.name)}"></div><div><label>Телефон</label><input id="cp" type="tel" value="${esc(u.phone)}"></div><div><label>Тақырып</label><select id="ct"><option>Топтық брондау</option><option>Той / іс-шара</option><option>Трансфер</option><option>Шағым / ұсыныс</option><option>Басқа</option></select></div></div><div class="row"><div><label>Хабарлама</label><textarea id="cm"></textarea></div></div><div class="err" id="er"></div><button class="btn" id="cs">Өтінімді жіберу</button></div>`}
+function vAdmin(){const rev=books.filter(b=>b.st==="Расталды").reduce((s,b)=>s+b.total,0),t=S.tab;
+const tabs=[["b","Брондар"],["q","Өтінімдер"],["r","Нөмірлер"],["u","Пайдаланушылар"]];let body="";
+if(t==="b"){let l=books.slice().reverse().filter(b=>(!S.fs||b.st===S.fs)&&(!S.q||(b.name+b.phone+b.id).toLowerCase().includes(S.q.toLowerCase())));
+body=`<h3>Жаңа бронь қосу</h3><div class="row"><div><label>Нөмір</label><select id="nr">${rooms.map(r=>`<option value="${r.id}">${esc(r.name)} — ${fmt(r.price)}</option>`).join("")}</select></div><div><label>Қонақ</label><input id="nn"></div><div><label>Телефон</label><input id="np" type="tel"></div><div><label>Келу</label><input type="date" id="n1" min="${day(0)}" value="${day(0)}"></div><div><label>Кету</label><input type="date" id="n2" min="${day(1)}" value="${day(1)}"></div><div><label>Қонақ саны</label><input type="number" id="ng" min="1" value="1"></div></div><div class="err" id="er"></div><button class="btn" id="na">Бронь қосу (расталған)</button><hr style="border:0;border-top:1px solid var(--line);margin:22px 0"><div class="bar"><div><label>Мәртебе</label><select id="fs"><option value="">Барлығы</option>${["Күтуде","Расталды","Бас тартылды"].map(s=>`<option ${S.fs===s?"selected":""}>${s}</option>`).join("")}</select></div><div><label>Іздеу (аты, телефон, код)</label><input id="fq" value="${esc(S.q)}"></div></div>${bookTable(l,true)}`}
+if(t==="q")body=reqs.length?`<div class="tw"><table><tr><th>Күні</th><th>Аты</th><th>Телефон</th><th>Тақырып</th><th>Хабарлама</th><th>Мәртебе</th><th></th></tr>${reqs.slice().reverse().map(q=>`<tr><td>${q.at}</td><td>${esc(q.name)}</td><td>${esc(q.phone)}</td><td>${esc(q.t)}</td><td style="white-space:normal;min-width:220px">${esc(q.m)}</td><td>${q.done?stb("Расталды").replace("Расталды","Жауап берілді"):stb("Күтуде").replace("Күтуде","Жаңа")}</td><td>${q.done?"":`<button class="btn sm okb" data-qd="${q.id}">Орындалды</button> `}<button class="btn sm bad" data-dq="${q.id}">Жою</button></td></tr>`).join("")}</table></div>`:'<p class="muted">Өтінімдер әзірге жоқ.</p>';
+if(t==="r")body=`<div class="tw"><table><tr><th>Нөмір</th><th>Санат</th><th>Бағасы (₸/түн)</th><th>Сиымдылық</th><th>Сайтта</th></tr>${rooms.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.type}</td><td><input type="number" style="width:130px" min="1000" step="1000" value="${r.price}" data-pr="${r.id}"></td><td>${r.cap}</td><td><button class="btn sm ${r.on?"pri":"ghost"}" data-tg="${r.id}">${r.on?"Көрінеді":"Жасырын"}</button></td></tr>`).join("")}</table></div><h3 style="margin-top:22px">Жаңа нөмір қосу</h3><div class="row"><div><label>Атауы</label><input id="an"></div><div><label>Санат</label><select id="at"><option>Стандарт</option><option>Комфорт</option><option>Делюкс</option><option>Сьют</option></select></div><div><label>Бағасы (₸)</label><input id="ap" type="number" value="30000"></div><div><label>Сиымдылық</label><input id="ac" type="number" value="2" min="1"></div></div><button class="btn" id="ar">Нөмір қосу</button>`;
+if(t==="u")body=`<div class="tw"><table><tr><th>Аты</th><th>Email</th><th>Телефон</th><th>Рөлі</th><th>Брондар</th><th></th></tr>${users.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${esc(u.phone)}</td><td><select data-role="${u.id}" ${u.id===S.me?"disabled":""} style="width:130px"><option value="user" ${u.role==="user"?"selected":""}>Қонақ</option><option value="admin" ${u.role==="admin"?"selected":""}>Әкімші</option></select></td><td>${books.filter(b=>b.uid===u.id).length}</td><td>${u.id===S.me?"":`<button class="btn sm bad" data-du="${u.id}">Жою</button>`}</td></tr>`).join("")}</table></div>`;
+return `<h2>Әкімші панелі</h2><div class="stats"><div class="stat"><b>${books.length}</b><span>барлық бронь</span></div><div class="stat"><b>${books.filter(b=>b.st==="Күтуде").length}</b><span>растауды күтуде</span></div><div class="stat"><b>${fmt(rev)}</b><span>расталған түсім</span></div><div class="stat"><b>${users.length}</b><span>пайдаланушы</span></div></div><div class="tabs">${tabs.map(x=>`<button class="btn ${t===x[0]?"pri":"ghost"}" data-tab="${x[0]}">${x[1]}${x[0]==="q"&&reqs.some(q=>!q.done)?" ●":""}</button>`).join("")}</div><div class="panel">${body}</div>`}
+function render(){const u=cur(),adm=isAdm();
+const nv=[["home","Басты бет"],["rooms","Нөмірлер"],["find","Брон іздеу"]];if(u)nv.push(["my","Менің брондарым"]);nv.push(["contact","Өтінім"]);if(adm)nv.push(["admin","Әкімші"]);
+$("#nav").innerHTML=nv.map(n=>`<button data-go="${n[0]}" class="${S.v===n[0]||(S.v==="book"&&n[0]==="rooms")?"on":""}">${n[1]}</button>`).join("");
+$("#who").innerHTML=u?`<span><b>${esc(u.name.split(" ")[0])}</b> <span class="role">${adm?"Әкімші":"Қонақ"}</span></span><button id="lo">Шығу</button>`:'<button data-m="in">Кіру</button><button data-m="up" style="background:var(--gold);color:#241a00">Тіркелу</button>';
+$("#app").innerHTML='<div class="view">'+({home:vHome,rooms:vRooms,book:vBook,my:vMy,auth:vAuth,contact:vContact,admin:vAdmin,find:vFind}[S.v])()+'</div>';bind()}
+function bind(){
+$$("[data-go]").forEach(e=>e.onclick=()=>go(e.dataset.go));
+$$("[data-m]").forEach(e=>e.onclick=()=>{S.mode=e.dataset.m;S.v="auth";render()});
+if($("#lo"))$("#lo").onclick=()=>{S.me=null;DB.set("h2me",null);S.v="home";render();toast("Жүйеден шықтыңыз")};
+if($("#find"))$("#find").onclick=()=>{S.in=$("#d1").value;S.out=$("#d2").value;S.g=+$("#gg").value;if(nights(S.in,S.out)<1){toast("Кету күні келу күнінен кейін болуы керек");return}S.v==="home"?go("rooms"):render()};
+if($("#ft"))$("#ft").onchange=e=>{S.type=e.target.value;render()};
+if($("#so"))$("#so").onchange=e=>{S.sort=e.target.value;render()};
+$$("[data-b]").forEach(e=>e.onclick=()=>{S.room=+e.dataset.b;go("book")});
+if($("#sw"))$("#sw").onclick=()=>{S.mode=S.mode==="up"?"in":"up";render()};
+if($("#go1"))$("#go1").onclick=()=>{const em=$("#ae").value.trim().toLowerCase(),pw=$("#aw").value;let er="",u;
+if(S.mode==="up"){const nm=$("#rn").value.trim(),ph=$("#rp").value.trim();if(nm.length<3)er="Аты-жөніңізді жазыңыз.";else if(!okPhone(ph))er="Телефон нөмірін дұрыс жазыңыз.";else if(!/^\S+@\S+\.\S+$/.test(em))er="Email дұрыс емес.";else if(pw.length<6)er="Құпиясөз кемінде 6 таңба болуы керек.";else if(users.some(x=>x.email===em))er="Бұл email тіркелген. Жүйеге кіріңіз.";
+if(!er){u={id:"U"+Date.now(),name:nm,email:em,phone:ph,pw:h(pw),role:"user"};users.push(u);save()}}
+else{u=users.find(x=>x.email===em&&x.pw===h(pw));if(!u)er="Email немесе құпиясөз қате."}
+$("#er").textContent=er;if(er)return;S.me=u.id;DB.set("h2me",u.id);const nx=S.next||(u.role==="admin"?"admin":"rooms");S.next=null;go(nx);toast("Қош келдіңіз, "+u.name.split(" ")[0]+"!")};
+if($("#b1")){const r=rm(S.room),upd=()=>{const n=Math.max(0,nights($("#b1").value,$("#b2").value)||0);$("#sn").textContent=n;$("#st").textContent=fmt(n*r.price)};$("#b1").onchange=$("#b2").onchange=upd;upd();
+$("#ok").onclick=()=>{const u=cur(),res=addBooking({room:r.id,uid:u.id,name:$("#bn").value,phone:$("#bp").value,email:u.email,in:$("#b1").value,out:$("#b2").value,g:+$("#bg").value});
+if(typeof res==="string"){$("#er").textContent=res;return}S.in=$("#b1").value;S.out=$("#b2").value;S.v="my";render();toast("Бронь қабылданды! Коды: "+res.id)}}
+$$("[data-cx]").forEach(e=>e.onclick=()=>{const b=books.find(x=>x.id===e.dataset.cx);if(!b||(!isAdm()&&b.uid!==S.me))return;if(!confirm("Броньнан бас тартасыз ба?"))return;b.st="Бас тартылды";save();render();toast("Бронь бас тартылды")});
+$$("[data-ok]").forEach(e=>e.onclick=()=>{if(!isAdm())return;books.find(b=>b.id===e.dataset.ok).st="Расталды";save();render();toast("Бронь расталды")});
+$$("[data-del]").forEach(e=>e.onclick=()=>{if(!isAdm()||!confirm("Броньды біржола жоясыз ба?"))return;books=books.filter(b=>b.id!==e.dataset.del);save();render()});
+if($("#cs"))$("#cs").onclick=()=>{const n=$("#cn").value.trim(),p=$("#cp").value.trim(),m=$("#cm").value.trim();let er="";if(n.length<2)er="Атыңызды жазыңыз.";else if(!okPhone(p))er="Телефон нөмірін дұрыс жазыңыз.";else if(m.length<5)er="Хабарламаңызды жазыңыз.";$("#er").textContent=er;if(er)return;reqs.push({id:"Q"+Date.now(),at:day(0),name:n,phone:p,t:$("#ct").value,m});save();render();toast("Өтінім жіберілді. Жақында хабарласамыз!")};
+$$("[data-tab]").forEach(e=>e.onclick=()=>{S.tab=e.dataset.tab;render()});
+if($("#fs"))$("#fs").onchange=e=>{S.fs=e.target.value;render()};
+if($("#fq"))$("#fq").onchange=e=>{S.q=e.target.value.trim();render()};
+if($("#na"))$("#na").onclick=()=>{const res=addBooking({room:+$("#nr").value,uid:"",name:$("#nn").value,phone:$("#np").value,in:$("#n1").value,out:$("#n2").value,g:+$("#ng").value,st:"Расталды"});if(typeof res==="string"){$("#er").textContent=res;return}render();toast("Бронь қосылды: "+res.id)};
+$$("[data-qd]").forEach(e=>e.onclick=()=>{reqs.find(q=>q.id===e.dataset.qd).done=true;save();render()});
+$$("[data-dq]").forEach(e=>e.onclick=()=>{reqs=reqs.filter(q=>q.id!==e.dataset.dq);save();render()});
+$$("[data-pr]").forEach(e=>e.onchange=()=>{const r=rm(e.dataset.pr);r.price=Math.max(1000,+e.value||r.price);save();toast("Баға жаңартылды")});
+$$("[data-tg]").forEach(e=>e.onclick=()=>{const r=rm(e.dataset.tg);r.on=!r.on;save();render()});
+if($("#ar"))$("#ar").onclick=()=>{const n=$("#an").value.trim();if(n.length<3){toast("Нөмір атауын жазыңыз");return}rooms.push({id:Math.max(...rooms.map(r=>r.id))+1,name:n,type:$("#at").value,price:Math.max(1000,+$("#ap").value||30000),cap:Math.max(1,+$("#ac").value||2),beds:"Стандарт төсек",ic:"🛏️",c:"#14365e,#1d8a9a",f:["Wi‑Fi","Душ"],on:true});save();render();toast("Нөмір қосылды")};
+$$("[data-view]").forEach(e=>e.onclick=()=>{S.bk=e.dataset.view;S.code=S.bk;S.op={i:true};S.v="find";render();const d=$("#det");if(d)d.scrollIntoView()});
+if($("#fgo"))$("#fgo").onclick=()=>{const c=$("#fc").value.trim().toUpperCase(),p=$("#fp").value,b=books.find(x=>x.id===c);let er="";S.code=c;S.ph=p;if(!c)er="Бронь кодын жазыңыз.";else if(!b)er="Мұндай кодты бронь табылмады.";else if(!(isAdm()||(cur()&&b.uid===S.me)||dg(b.phone)===dg(p)))er="Телефон нөмірі брондағы нөмірмен сәйкес келмейді.";
+if(er){S.bk=null;render();$("#er").textContent=er;return}S.bk=b.id;S.op={i:true};render();const d=$("#det");if(d)d.scrollIntoView({behavior:"smooth"})};
+$$("details[data-sec]").forEach(d=>d.ontoggle=()=>{S.op[d.dataset.sec]=d.open});
+$$("[data-sv]").forEach(e=>e.onchange=()=>{const b=books.find(x=>x.id===S.bk);if(!b)return;const k=e.dataset.sv,s=(b.sv||[]).filter(x=>x!==k);if(e.checked)s.push(k);b.sv=s;recalc(b);save();render();toast("Қызметтер жаңартылды")});
+$$("[data-chg]").forEach(e=>e.onclick=()=>{const b=books.find(x=>x.id===S.bk),a=$("#ch1").value,c=$("#ch2").value;let er="";if(!a||!c||nights(a,c)<1)er="Кету күні келу күнінен кейін болуы керек.";else if(a<day(0))er="Өткен күнді таңдауға болмайды.";else if(books.some(x=>x.id!==b.id&&x.room==b.room&&x.st!=="Бас тартылды"&&a<x.out&&c>x.in))er="Бұл күндері нөмір бос емес.";if(er){toast(er);return}b.in=a;b.out=c;b.t0=nights(a,c)*(rm(b.room)?rm(b.room).price:0);recalc(b);save();render();toast("Күндер өзгертілді")});
+$$("[data-role]").forEach(e=>e.onchange=()=>{users.find(u=>u.id===e.dataset.role).role=e.value;save();toast("Рөл өзгертілді")});
+$$("[data-du]").forEach(e=>e.onclick=()=>{if(!confirm("Пайдаланушыны жоясыз ба?"))return;users=users.filter(u=>u.id!==e.dataset.du);save();render()})}
+render();
+</script>
+</body>
+</html>
